@@ -50,7 +50,7 @@ const syncUserUpdation = inngest.createFunction(
                 id: data.id
             },
             data: {
-                email: data?.email_addresses[0]?.email_addresses,
+                email: data?.email_addresses[0]?.email_address,
                 name: data?.first_name + " " + data?.last_name,
                 image: data?.image_url,
             }
@@ -130,7 +130,7 @@ const syncWorkspaceMemberCreation = inngest.createFunction(
         const { data } = event;
         await prisma.workspaceMember.create({
             data: {
-                userID: data.user_id,
+                userId: data.user_id,
                 workspaceId: data.organization_id,
                 role: String(data.role_name).toUpperCase(),
             }
@@ -185,7 +185,7 @@ const sendTaskAssignmentEmail = inngest.createFunction(
             await step.run('check-if-task-is-completed', async () => {
                 const task = await prisma.task.findUnique({
                     where: {id: taskId},
-                    include: {assignee: true, projectL true}
+                    include: {assignee: true, project: true}
                 })
 
                 if(!task) return;
