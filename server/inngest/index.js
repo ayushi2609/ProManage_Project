@@ -1,6 +1,6 @@
 import { Inngest } from "inngest";
 import prisma from "../configs/prisma.js";
-import sendEmail from "../configs/nodemailer.js";
+import sendEmail from "../configs/nodeMailer.js";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "promanage" });
@@ -125,7 +125,7 @@ const syncWorkspaceDeletion = inngest.createFunction(
 
 const syncWorkspaceMemberCreation = inngest.createFunction(
     {id: 'sync-workspace-member-from-clerk' },
-    {event: 'clerk/OrganizationInvitation.accepted' },
+    {event: 'clerk/organizationInvitation.accepted' },
     async ({ event }) => {
         const { data } = event;
         await prisma.workspaceMember.create({
