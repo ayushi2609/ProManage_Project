@@ -27,6 +27,12 @@ export const createProject = async (req, res) => {
                 select: {id: true}
             })
 
+            if (!teamLead) {
+                 return res.status(404).json({
+                    message: "Team lead not found"
+                });
+}
+
             const project = await prisma.project.create({
                 data: {
                     workspaceId,
@@ -35,7 +41,7 @@ export const createProject = async (req, res) => {
                     status,
                     priority,
                     progress,
-                    team_lead: team_lead?.id,
+                    team_lead: teamLead?.id,
                     start_date: start_date ? new Date(start_date) : null,
                     end_date: end_date ? new Date(end_date) : null,
                 }
