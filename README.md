@@ -33,3 +33,6 @@ Key Features:
 📊 Dashboard & Progress Tracking
 📱 Responsive Design
 ⚡ RESTful APIs
+
+Contact Details:
+Linkedin: https://www.linkedin.com/in/ayushi-bhatia-1822951a7/
