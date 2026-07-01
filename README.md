@@ -37,9 +37,6 @@ Key Features:
 Contact Details:
 Linkedin: https://www.linkedin.com/in/ayushi-bhatia-1822951a7/
 
-Login Screen of my project:
-
-<img width="554" height="631" alt="Login_Page" src="https://github.com/user-attachments/assets/a01d12c6-9554-4ed9-976c-2fbd86d7f732" />
 
 Dashboard Screen of my project:
 
